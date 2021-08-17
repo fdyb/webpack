@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Datetime superapp</title>
+    <script src="./src/main.js" type="module"></script>
+</head>
+
+<body>
+<button id="page1cmd" class="cmdBtn">Таймер</button>
+<button id="page2cmd" class="cmdBtn">Калькулятор дат</button>
+<div id="page1" class="page hidden">
+
+    <form id="timerSetForm">
+        <h3>Таймер</h3>
+        <audio id="doneSound" hidden = true>
+            <source src="./src/audio/done.mp3" type="audio/mpeg">
+        </audio>
+        <label>
+            <strong>часы:</strong>
+            <input type="number" name="timerHours" min="0" max="24" class = "timerInput"/>
+        </label>
+        <label>
+            <strong>мин:</strong>
+            <input type="number" name="timerMinutes" min="0" max="59" class = "timerInput"/>
+        </label>
+        <label>
+            <strong>сек:</strong>
+            <input type="number" name="timerSeconds" min="0" max="59" class = "timerInput"/>
+        </label>
+        <button type="submit">Запустить таймер</button>
+        <button hiddent = true type="button" id = "stopBtn">Стоп</button>
+        <p id="timer__result"></p>
+    </form>
+</div>
+<div id="page2" class="page hidden">
+    <form id="datecalc">
+        <h3>Калькулятор дат</h3>
+        <label>
+            <strong>Первая дата:</strong>
+            <input type="date" name="firstDate" />
+        </label>
+        <label>
+            <strong>Вторая дата:</strong>
+            <input type="date" name="secondDate" />
+        </label>
+        <button type="submit">Расчитать промежуток</button>
+        <p id="datecalc__result"></p>
+    </form>
+
+</div>
+</body>
+
+</html>
